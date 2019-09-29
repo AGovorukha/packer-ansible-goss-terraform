@@ -6,6 +6,7 @@ resource "aws_launch_configuration" "bastion_as_conf" {
   key_name                    = var.ssh_key_name
   security_groups             = [aws_security_group.bastion_sg.id]
   associate_public_ip_address = true
+  iam_instance_profile        = module.bastion_role.profile_name
 
   root_block_device {
     volume_type               = "gp2"
