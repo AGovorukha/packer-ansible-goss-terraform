@@ -1,0 +1,10 @@
+---
+# tasks file for bastion
+- import_tasks: prepare-system.yml
+  tags: system
+
+- import_tasks: ssh.yml
+  tags: ssh
+
+- import_tasks: firewall.yml
+  tags: firewall
